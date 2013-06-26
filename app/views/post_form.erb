@@ -1,0 +1,23 @@
+<!-- <link rel="stylesheet" href="/css/normalize.css"> -->
+
+<div class="container">
+  <h1>Create a Post</h1>
+  <p>Please fill in the following items</p>
+
+    <form name="posting" action="/create_post/<%= @id %>" method="post">
+    <br>
+    <input type="text" name="posting[name]" placeholder='Your Name'>
+    <input type="text" name="posting[email]" placeholder='Your Email'>
+    <input type="text" name="posting[price]" placeholder='Item Price'>
+    <input type="text" name="posting[item]" placeholder='Item'>
+    <input type="submit" value="Submit">
+  </form>
+   <% if @complete %>
+   <p style="color:#33CC33;">Your Post Has Been Created</p>
+   <p>Use this link to update your post again...<a href="/update_post/<%= @complete %>">
+   <%= "localhost:9393/update_post/" + @complete.to_s %></a></p>
+  <% end %>  
+</div>
+
+
+

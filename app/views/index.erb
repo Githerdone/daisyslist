@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Welcome to Daisylist</h1>
+  <p>Where shit is bought and sold!</p>
+
+  <table>
+    <tr>
+      <th>Categories</th>
+    </tr>
+    <tr>
+      <td>
+        <% @cat_log.each do |i| %>
+        <p>
+          <a href="/categories/<%=i.id%>">
+        <%= " - " + i.name %>
+      </a>
+      </p>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>

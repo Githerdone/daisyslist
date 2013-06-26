@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Update Your Post</h1>
+  <p>Please fill in the following items</p>
+
+    <form name="posting" action="/update_post/<%= @post.id %>" method="post">
+    <br>
+    <input type="text" name="posting[name]" value='<%= @post.name %>'>
+    <input type="text" name="posting[email]" value='<%= @post.email %>'>
+    <input type="text" name="posting[price]" value='<%= @post.price %>'>
+    <input type="text" name="posting[item]" value='<%= @post.item %>'>
+    <input type="submit" value="Submit">
+  </form>
+  <% if @complete %>
+   <p style="color:#33CC33;">Your Post Has Been Created</p>
+   <p>Use this link to update your post again...<a href="/update_post/<%= @complete %>">
+    <%= "localhost:9393/update_post/" + @complete.to_s %></a></p>
+  <% end %> 
+</div>

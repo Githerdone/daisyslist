@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Welcome to Daisylist</h1>
+  <h3>Create a new <%= @category.name %> post 
+    <a href="/postform/<%= @category.id %>"> Here...</h3></a>
+  <p>You be lookin at the Posts View Ya'll</p>
+
+  <table>
+    <tr>
+      <th>Category: <%= @category.name %></th>
+    </tr>
+    <tr>
+      <td>
+        <% @category.posts.each do |post| %>
+        <p>
+          <a href="/single_post/<%=post.id%>">
+        <%= " - " + post.name unless post.name.nil? %>
+      </a>
+      </p>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+ 
